@@ -1,6 +1,6 @@
 # TD Ameritrade
 
-TD Ameritrade is a C# implementation of a websocket client for accessing TD Ameritrade Streaming Data.
+TD Ameritrade is a C# implementation of a websocket client for accessing TD Ameritrade Streaming Data.  It supports .Net Core and was written using Visual Studio Code.
 
 This project consists of two components:
 - **TDProvider**: TDProvider is a class which manages all communication with TD Ameritrade including authentication and data streaming.
