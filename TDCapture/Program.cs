@@ -21,9 +21,6 @@ namespace TDAmeritrade
             await auth.RefreshAccessToken();
             await auth.GetUserPrincipals();
 
-            ServiceRequests serviceRequests = new ServiceRequests();
-            serviceRequests.requests.Add(ServiceRequestFactory.CreateLoginRequest(auth.StreamingCredentials));
-
             // Create an instance of the StreamingProvider which will be used for processing the streaming data
             Streamer streamer = new Streamer(auth.StreamingCredentials);
 
@@ -41,11 +38,11 @@ namespace TDAmeritrade
             //streamer.StartCapturingData("datacapture.txt", 60);
 
             // Example code to play back previously captured data at 1-second intervals
-            streamer.PlaybackCapturedData("datacapture.txt", 3000);
-            await Task.Delay(90000);
-            return;
+            // streamer.PlaybackCapturedData("datacapture.txt", 3000);
+            // await Task.Delay(90000);
+            // return;
 
-            // Start streaming data
+            // Create a cancellation token which will be used to cancel the asynchrnous websocket later
             var cts = new CancellationTokenSource();
 
             Console.CancelKeyPress += (sender, e) =>
